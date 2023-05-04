@@ -26,7 +26,8 @@ const OMDB = () => {
   }, []);
 
   const printData = () => {
-    const { Year, Genre, Rated, Director, Plot } = movieData;
+    const { Year, Genre, Rated, Director, Plot, Ratings } = movieData;
+
     return (
       <>
         <tr>
@@ -48,6 +49,10 @@ const OMDB = () => {
         <tr>
           <td>Plot</td>
           <td>{Plot}</td>
+        </tr>
+        <tr>
+          <td>Ratings (WIP)</td>
+          <td></td>
         </tr>
       </>
     );
