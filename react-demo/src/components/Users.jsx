@@ -1,4 +1,6 @@
 import users from "../resources/users.json";
+import { Table } from "reactstrap";
+
 const Users = () => {
   const printData = () => {
     return users.map((u, index) => {
@@ -40,7 +42,7 @@ const Users = () => {
 
   return (
     <>
-      <table>
+      <Table hover striped>
         <thead>
           <tr>
             <td>id</td>
@@ -56,7 +58,7 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>{printData()}</tbody>
-      </table>
+      </Table>
     </>
   );
 };

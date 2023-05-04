@@ -1,4 +1,6 @@
 import comments from "../resources/comments.json";
+import { Table } from "reactstrap";
+
 const Comments = () => {
   const printData = () => {
     return comments.map((c, index) => {
@@ -17,7 +19,7 @@ const Comments = () => {
 
   return (
     <>
-      <table>
+      <Table hover striped>
         <thead>
           <tr>
             <td>postId</td>
@@ -28,7 +30,7 @@ const Comments = () => {
           </tr>
         </thead>
         <tbody>{printData()}</tbody>
-      </table>
+      </Table>
     </>
   );
 };

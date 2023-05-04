@@ -1,4 +1,6 @@
 import photos from "../resources/photos.json";
+import { Table } from "reactstrap";
+
 const Photos = () => {
   const printData = () => {
     return photos.map((p, index) => {
@@ -17,7 +19,7 @@ const Photos = () => {
 
   return (
     <>
-      <table>
+      <Table hover striped>
         <thead>
           <tr>
             <td>albumId</td>
@@ -28,7 +30,7 @@ const Photos = () => {
           </tr>
         </thead>
         <tbody>{printData()}</tbody>
-      </table>
+      </Table>
     </>
   );
 };

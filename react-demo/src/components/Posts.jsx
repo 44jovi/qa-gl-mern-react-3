@@ -1,4 +1,6 @@
 import posts from "../resources/posts.json";
+import { Table } from "reactstrap";
+
 const Posts = () => {
   const printData = () => {
     return posts.map((p, index) => {
@@ -16,7 +18,7 @@ const Posts = () => {
 
   return (
     <>
-      <table>
+      <Table hover striped>
         <thead>
           <tr>
             <td>userId</td>
@@ -26,7 +28,7 @@ const Posts = () => {
           </tr>
         </thead>
         <tbody>{printData()}</tbody>
-      </table>
+      </Table>
     </>
   );
 };

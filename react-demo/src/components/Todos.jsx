@@ -1,4 +1,6 @@
 import todos from "../resources/todos.json";
+import { Table } from "reactstrap";
+
 const Todos = () => {
   const printData = () => {
     return todos.map((p, index) => {
@@ -17,7 +19,7 @@ const Todos = () => {
 
   return (
     <>
-      <table>
+      <Table hover striped>
         <thead>
           <tr>
             <td>userId</td>
@@ -27,7 +29,7 @@ const Todos = () => {
           </tr>
         </thead>
         <tbody>{printData()}</tbody>
-      </table>
+      </Table>
     </>
   );
 };
