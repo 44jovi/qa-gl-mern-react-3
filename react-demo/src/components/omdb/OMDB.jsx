@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 const OMDB = () => {
-  const [movieTitle, setMovieTitle] = useState("hobbit");
+  const [movieTitle, setMovieTitle] = useState("");
   const [movieData, setMovieData] = useState([]);
 
   const getData = () => {
@@ -17,17 +17,19 @@ const OMDB = () => {
       .catch((error) => console.error(error));
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      getData();
-    }, 1000);
-  }, [movieTitle]);
+  // Not needed unless you want to display a movie before user input
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       getData();
+  //     }, 1000);
+  //   }, []);
 
   return (
     <>
       <h1>{movieData.Title}</h1>
-      <img src={movieData.Poster} alt="movieData.Title"></img>
+      <img src={movieData.Poster} alt={movieData.Title}></img>
       <input type="text" onChange={(e) => setMovieTitle(e.target.value)} />
+      <button onClick={getData}>GO</button>
     </>
   );
 };
