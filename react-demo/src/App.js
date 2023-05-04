@@ -9,6 +9,7 @@ import Photos from "./components/Photos";
 import Posts from "./components/Posts";
 import Todos from "./components/Todos";
 import Users from "./components/Users";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route exact path="/photos" element={<Photos />}></Route>
           <Route exact path="/todos" element={<Todos />}></Route>
           <Route exact path="/users" element={<Users />}></Route>
-          {/* <Route exact path="*" element={<NotFoundPage />}></Route> */}
+          <Route exact path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
     </>
