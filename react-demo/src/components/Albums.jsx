@@ -3,7 +3,6 @@ const Albums = () => {
   const printData = () => {
     return albums.map((a, index) => {
       const { userId, id, title } = a;
-      console.log(a);
       return (
         <tr key={index}>
           <td>{userId}</td>
