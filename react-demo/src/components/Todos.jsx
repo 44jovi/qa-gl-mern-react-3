@@ -9,8 +9,7 @@ const Todos = () => {
           <td>{userId}</td>
           <td>{id}</td>
           <td>{title}</td>
-          {/* TODO: render true or false for "completed" */}
-          <td>{completed}</td>
+          <td>{String(completed)}</td>
         </tr>
       );
     });
