@@ -10,8 +10,14 @@ const Photos = () => {
           <td>{albumId}</td>
           <td>{id}</td>
           <td>{title}</td>
-          <td>{url}</td>
-          <td>{thumbnailUrl}</td>
+          <td>
+            {
+              <a href={url} target="_blank" rel="noreferrer">
+                <img src={thumbnailUrl} alt={title} />
+              </a>
+            }
+          </td>
+          <td></td>
         </tr>
       );
     });
@@ -25,8 +31,7 @@ const Photos = () => {
             <td>albumId</td>
             <td>id</td>
             <td>title</td>
-            <td>url</td>
-            <td>thumbnailUrl</td>
+            <td>image</td>
           </tr>
         </thead>
         <tbody>{printData()}</tbody>
