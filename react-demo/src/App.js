@@ -10,6 +10,7 @@ import Posts from "./components/Posts";
 import Todos from "./components/Todos";
 import Users from "./components/Users";
 import NotFound from "./components/NotFound";
+import OMDB from "./components/omdb/OMDB";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         </header>
       </div>
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Menu />
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
@@ -32,7 +33,8 @@ function App() {
           <Route exact path="/users" element={<Users />}></Route>
           <Route exact path="*" element={<NotFound />}></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <OMDB />
     </>
   );
 }
