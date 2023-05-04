@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 const OMDB = () => {
-  const [movieTitle, setMovie] = useState("hobbit");
+  const [movieTitle, setMovieTitle] = useState("hobbit");
   const [movieData, setMovieData] = useState([]);
 
   const getData = () => {
@@ -17,18 +17,17 @@ const OMDB = () => {
       .catch((error) => console.error(error));
   };
 
-  //   getData();
-
   useEffect(() => {
     setTimeout(() => {
       getData();
-    }, 2000);
-  }, []);
+    }, 1000);
+  }, [movieTitle]);
 
   return (
     <>
       <h1>{movieData.Title}</h1>
       <img src={movieData.Poster} alt="movieData.Title"></img>
+      <input type="text" onChange={(e) => setMovieTitle(e.target.value)} />
     </>
   );
 };
