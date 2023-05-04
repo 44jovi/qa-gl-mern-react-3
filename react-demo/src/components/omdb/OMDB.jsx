@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Input, Button, Table } from "reactstrap";
 const OMDB = () => {
   const [movieTitle, setMovieTitle] = useState("");
   const [movieData, setMovieData] = useState([]);
@@ -24,12 +25,49 @@ const OMDB = () => {
   //     }, 1000);
   //   }, []);
 
+  const printData = () => {
+    const { Genre, Rated, Director, Plot } = movieData;
+    return (
+      <>
+        <tr>
+          <td>Genre</td>
+          <td>{Genre}</td>
+        </tr>
+        <tr>
+          <td>Rated</td>
+          <td>{Rated}</td>
+        </tr>
+        <tr>
+          <td>Director</td>
+          <td>{Director}</td>
+        </tr>
+        <tr>
+          <td>Plot</td>
+          <td>{Plot}</td>
+        </tr>
+      </>
+    );
+  };
+
   return (
     <>
       <h1>{movieData.Title}</h1>
-      <img src={movieData.Poster} alt={movieData.Title}></img>
-      <input type="text" onChange={(e) => setMovieTitle(e.target.value)} />
-      <button onClick={getData}>GO</button>
+      <img src={movieData.Poster} alt={movieData.Title} width="25%"></img>
+      <Table dark style={{ width: "25%" }}>
+        <thead>
+          <th></th>
+          <th></th>
+        </thead>
+        <tbody>{printData()}</tbody>
+      </Table>
+      <Input
+        type="text"
+        onChange={(e) => setMovieTitle(e.target.value)}
+        style={{ width: "25%" }}
+      />
+      <Button color="success" onClick={getData} style={{ width: "25%" }}>
+        GO
+      </Button>
     </>
   );
 };
