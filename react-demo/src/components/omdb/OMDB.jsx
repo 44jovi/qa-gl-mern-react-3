@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Input, Button, Table } from "reactstrap";
 const OMDB = () => {
-  const [movieTitle, setMovieTitle] = useState("");
+  const [movieTitle, setMovieTitle] = useState("hobbit");
   const [movieData, setMovieData] = useState([]);
 
   const getData = () => {
@@ -18,17 +18,21 @@ const OMDB = () => {
       .catch((error) => console.error(error));
   };
 
-  // Not needed unless you want to display a movie before user input
-  //   useEffect(() => {
-  //     setTimeout(() => {
-  //       getData();
-  //     }, 1000);
-  //   }, []);
+  //   Only needed if you want to display a movie before user input
+  useEffect(() => {
+    setTimeout(() => {
+      getData();
+    }, 1000);
+  }, []);
 
   const printData = () => {
-    const { Genre, Rated, Director, Plot } = movieData;
+    const { Year, Genre, Rated, Director, Plot } = movieData;
     return (
       <>
+        <tr>
+          <td>Year</td>
+          <td>{Year}</td>
+        </tr>
         <tr>
           <td>Genre</td>
           <td>{Genre}</td>
