@@ -32,9 +32,14 @@ const OMDB = () => {
 
   const printData = () => {
     if (isLoaded) {
-      const { Year, Genre, Rated, Director, Actors, Plot, Ratings } = movieData;
+      const { Title, Year, Genre, Rated, Director, Actors, Plot, Ratings } =
+        movieData;
       return (
         <>
+          <tr>
+            <td>Title</td>
+            <td>{Title}</td>
+          </tr>
           <tr>
             <td>Year</td>
             <td>{Year}</td>
