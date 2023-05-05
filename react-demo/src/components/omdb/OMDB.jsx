@@ -31,7 +31,7 @@ const OMDB = () => {
   }, []);
 
   const printData = () => {
-    if (isLoaded === true) {
+    if (isLoaded) {
       const { Year, Genre, Rated, Director, Actors, Plot, Ratings } = movieData;
       return (
         <>
