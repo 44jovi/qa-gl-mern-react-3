@@ -35,7 +35,6 @@ function App() {
           <Route exact path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
-      {/* <OMDB /> */}
     </>
   );
 }
