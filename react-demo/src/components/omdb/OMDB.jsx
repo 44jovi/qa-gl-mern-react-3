@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Input, Button, Table, Spinner } from "reactstrap";
+import { Form, Input, Button, Table, Spinner } from "reactstrap";
 
 const OMDB = () => {
   const [movieTitle, setMovieTitle] = useState("hobbit");
   const [movieData, setMovieData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const getData = () => {
+  const getData = (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+
     const url = "http://www.omdbapi.com/?apikey=";
     const APIkey = "8f9fda4e&";
     axios
@@ -15,8 +19,6 @@ const OMDB = () => {
       .then((data) => {
         setMovieData(data.data);
         setIsLoaded(true);
-        console.log("DATA FROM API:");
-        console.log(data);
       })
       .catch((error) => {
         console.error(error);
@@ -95,6 +97,7 @@ const OMDB = () => {
     <>
       <h1>{movieData.Title}</h1>
       <img src={movieData.Poster} alt={movieData.Title}></img>
+
       <Table dark>
         <thead>
           <th></th>
@@ -102,10 +105,13 @@ const OMDB = () => {
         </thead>
         <tbody>{printData()}</tbody>
       </Table>
-      <Input type="text" onChange={(e) => setMovieTitle(e.target.value)} />
-      <Button color="success" onClick={getData}>
-        GO
-      </Button>
+
+      <Form onSubmit={getData}>
+        <Input type="text" onChange={(e) => setMovieTitle(e.target.value)} />
+        <Button color="success" type="submit" style={{ width: "100%" }}>
+          GO
+        </Button>
+      </Form>
     </>
   );
 };
