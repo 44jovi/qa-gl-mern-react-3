@@ -9,6 +9,9 @@ const Menu = () => {
           <NavLink href="/">HOME</NavLink>
         </NavItem>
         <NavItem>
+          <NavLink href="/movies">MOVIES</NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink href="/albums">ALBUMS</NavLink>
         </NavItem>
         <NavItem>

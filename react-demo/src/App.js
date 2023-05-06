@@ -21,10 +21,11 @@ function App() {
         </header>
       </div>
 
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Menu />
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/movies" element={<OMDB />}></Route>
           <Route exact path="/albums" element={<Albums />}></Route>
           <Route exact path="/comments" element={<Comments />}></Route>
           <Route exact path="/posts" element={<Posts />}></Route>
@@ -33,8 +34,8 @@ function App() {
           <Route exact path="/users" element={<Users />}></Route>
           <Route exact path="*" element={<NotFound />}></Route>
         </Routes>
-      </BrowserRouter> */}
-      <OMDB />
+      </BrowserRouter>
+      {/* <OMDB /> */}
     </>
   );
 }
